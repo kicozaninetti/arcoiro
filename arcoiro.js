@@ -1,11 +1,19 @@
 	jQuery(document).ready(function($){
+
+		//You can change this two variables
+		var msg = "ENTRAR NO SITE";
+		var hashtag = "#LoveWins";
+
+
 		var $size = $(window).height();
 		var $divSize = $size/6;
-		var msg = "ENTRAR NO SITE";
+
+		$("html,body").css("overflow", "hidden");
 		$("<div></div>")
 			.addClass("arcoiro")
 			.addClass("AIhaveToClose")
 			.css("position", "absolute")
+			.css("z-index", "999999999")
 			.css("top", "0")
 			.css("left", "0")
 			.css("width", "100%")
@@ -51,9 +59,11 @@
 			.addClass("AIcenter")
 			.addClass("AIhaveToClose")
 			.css("position", "absolute")
+			.css("z-index", "9999999999")
 			.css("width", "100%")
 			.css("top", "40%")
 			.css("text-align", "center")
+			.css("font-family", "'Trebuchet MS', Verdana, sans-serif")
 			.appendTo("body");
 		$("<a href='#'>"+msg+"</a>")
 			.addClass("AIaccess")
@@ -67,8 +77,9 @@
 			.appendTo("div.AIcenter")
 			.on("click", function(){
 				$(".AIhaveToClose").fadeOut();
+				$("html,body").css("overflow", "auto");
 			});
-		$("<p>#CelebratePride</p>")
+		$("<p>"+hashtag+"</p>")
 			.addClass("AIpride")
 			.css("padding", "10px 30px")
 			.css("color", "#FFFFFF")
